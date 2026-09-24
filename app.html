@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealEstateAI - Dashboard App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --success: #10b981;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        
+        header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+        .logo { font-size: 1.4rem; font-weight: 700; }
+        .logo span { color: var(--primary); }
+        .badge-status { background-color: rgba(16, 185, 129, 0.1); color: var(--success); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; margin-bottom: 25px; }
+        .card h2 { font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 6px; }
+        input, select, textarea { width: 100%; padding: 12px; background-color: #0f172a; border: 1px solid var(--border-color); border-radius: 8px; color: white; font-size: 0.95rem; }
+        textarea { resize: vertical; min-height: 90px; }
+
+        button { width: 100%; background-color: var(--primary); color: white; padding: 14px; border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: 0.2s; }
+        button:hover { background-color: var(--primary-hover); }
+
+        .output-box { background-color: #0f172a; border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-top: 15px; min-height: 120px; white-space: pre-wrap; font-size: 0.95rem; color: #e2e8f0; }
+        .copy-btn { margin-top: 10px; background-color: var(--border-color); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">RealEstate<span>AI</span> Dashboard</div>
+            <div class="badge-status">● Account Pro Attivo</div>
+        </header>
+
+        <!-- Tool 1: Generatore Annunci -->
+        <div class="card">
+            <h2>⚡ Generatore Annuncio Immobiliare IA</h2>
+            <div class="form-group">
+                <label>Tipologia Immobile</label>
+                <input type="text" id="type" placeholder="es. Trilocale panoramico con terrazzo">
+            </div>
+            <div class="form-group">
+                <label>Città e Zona</label>
+                <input type="text" id="location" placeholder="es. Milano, Zona Navigli">
+            </div>
+            <div class="form-group">
+                <label>Prezzo e Dettagli Chiave</label>
+                <input type="text" id="details" placeholder="es. 320.000€, 85mq, ristrutturato, 2° piano con ascensore">
+            </div>
+            <button onclick="generateAd()">Genera Annuncio IA</button>
+
+            <div class="output-box" id="adResult">I tuoi annunci generati appariranno qui...</div>
+            <button class="copy-btn" onclick="copyText('adResult')">📋 Copia Testo Generato</button>
+        </div>
+
+        <!-- Tool 2: Simulatore WhatsApp Qualification -->
+        <div class="card">
+            <h2>💬 Test Qualificatore WhatsApp Lead</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">
+                Simula la risposta automatica che il bot invia quando un potenziale cliente richiede informazioni.
+            </p>
+            <div class="form-group">
+                <label>Messaggio del Cliente</label>
+                <textarea id="clientMsg" placeholder="es. Buongiorno, vorrei maggiori informazioni sulla casa in via Roma..."></textarea>
+            </div>
+            <button onclick="simulateBot()" style="background-color: var(--success);">Invia Risposta Automatica Bot</button>
+
+            <div class="output-box" id="botResult">Risposta del bot in attesa...</div>
+        </div>
+    </div>
+
+    <script>
+        function generateAd() {
+            const type = document.getElementById('type').value || 'Splendido appartamento';
+            const location = document.getElementById('location').value || 'posizione centrale';
+            const details = document.getElementById('details').value || 'prezzo competitivo';
+            
+            const resultBox = document.getElementById('adResult');
+            resultBox.innerText = "⏳ Generazione dell'annuncio in corso con IA...";
+            
+            setTimeout(() => {
+                resultBox.innerText = `🏡 OPPORTUNITÀ UNICA A ${location.toUpperCase()}!
+
+Proponiamo in vendita esclusiva ${type.toLowerCase()}, situato in una delle zone più ricercate e servite.
+
+Caratteristiche principali:
+- Dettagli: ${details}
+- Luminosità eccellente e finiture di qualità
+- Ideale sia per famiglie che come investimento ad alta redditività
+
+📍 Posizione strategica comoda per tutti i servizi principali e i trasporti.
+
+📞 Per maggiori dettagli o per fissare una visita prioritaria, rispondi direttamente a questo messaggio o contattaci ora!`;
+            }, 1000);
+        }
+
+        function simulateBot() {
+            const clientMsg = document.getElementById('clientMsg').value;
+            const botBox = document.getElementById('botResult');
+            
+            if(!clientMsg) {
+                alert('Inserisci prima un messaggio di prova del cliente!');
+                return;
+            }
+
+            botBox.innerText = "🤖 Bot in elaborazione...";
+
+            setTimeout(() => {
+                botBox.innerText = `🤖 Assistente Virtuale RealEstateAI:
+
+"Salve! Grazie per aver espresso interesse per questo immobile. 
+
+Per aiutarla al meglio e darle precedenza negli appuntamenti, posso chiederle:
+1. Ha già una delibera o pre-approvazione del mutuo in banca?
+2. Quali sono le sue tempistiche ideali per il trasferimento?
+
+Se desidera, può anche prenotare direttamente un colloquio conoscitivo qui: [Link Calendly Agente]"`;
+            }, 800);
+        }
+
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text);
+            alert('Testo copiato negli appunti!');
+        }
+    </script>
+</body>
+</html>
