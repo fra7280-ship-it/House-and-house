@@ -3,356 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agento AI - Il Copilota IA per Agenzie Immobiliari</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>SYNKASA - IA & Automazione per Agenti Immobiliari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0d0f17;
-            --card-bg: #161926;
-            --primary: #6366f1;
-            --primary-hover: #4f46e5;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-color: #262a3d;
-            --accent-green: #10b981;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* Header / Navbar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #fff;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .cta-nav {
-            background-color: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .cta-nav:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 80px 20px 60px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .badge {
-            background-color: rgba(99, 102, 241, 0.1);
-            color: var(--primary);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(90deg, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-            padding: 15px 32px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 60px 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 12px;
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 80px 8%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .pricing-title {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        .pricing-subtitle {
-            color: var(--text-muted);
-            margin-bottom: 50px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .price-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 40px 30px;
-            text-align: left;
-            position: relative;
-        }
-
-        .price-card.popular {
-            border-color: var(--primary);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background-color: var(--primary);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 12px;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 20px 0;
-        }
-
-        .price span {
-            font-size: 1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .price-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .price-features li {
-            margin-bottom: 12px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .price-features li::before {
-            content: "✓ ";
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-
-        .btn-card {
-            display: block;
-            text-align: center;
-            background-color: var(--border-color);
-            color: white;
-            padding: 12px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn-card:hover {
-            background-color: var(--primary);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            padding: 30px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; }
-        }
+        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-card { background-color: #161b22; border: 1px solid #30363d; }
     </style>
 </head>
-<body>
-
-    <header>
-        <div class="logo">Agento<span>AI</span></div>
-        <a href="#pricing" class="cta-nav">Inizia Ora</a>
+<body class="min-h-screen flex flex-col justify-between p-4 md:p-8">
+    <!-- Header -->
+    <header class="flex justify-between items-center py-4 px-2 max-w-5xl mx-auto w-full">
+        <div class="flex items-center space-x-2">
+            <span class="text-2xl font-bold tracking-wider text-white">SYN<span class="gradient-text">KASA</span></span>
+        </div>
+        <a href="#pricing" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition">Prova Ora</a>
     </header>
 
-    <section class="hero">
-        <div class="badge">🚀 Intelligenza Artificiale per Agenti Immobiliari</div>
-        <h1>Genera annunci perfetti e qualifica i clienti su <span>WhatsApp in automatico</span></h1>
-        <p>Risparmia fino a 15 ore a settimana. Fai qualificare dal nostro bot le richieste di mutuo e tempistiche prima di fissare una visita.</p>
-        <div class="hero-buttons">
-            <a href="#pricing" class="btn-primary">Inizia la Prova Gratuita di 7 Giorni</a>
+    <!-- Hero Section -->
+    <main class="max-w-3xl mx-auto text-center my-12">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+            Genera annunci perfetti e qualifica i clienti su <span class="gradient-text">WhatsApp</span> in automatico
+        </h1>
+        <p class="text-lg text-gray-400 mb-8">
+            Risparmia fino a 15 ore a settimana. Fai qualificare dal nostro bot le richieste di mutuo e tempistiche prima di fissare una visita.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#pricing" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-xl text-lg transition shadow-lg shadow-purple-600/30">
+                Inizia la Prova Gratuita di 7 Giorni
+            </a>
+        </div>
+    </main>
+
+    <!-- Features -->
+    <section class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 my-12">
+        <div class="bg-card p-6 rounded-2xl">
+            <i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-2xl mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Generatore Annunci IA</h3>
+            <p class="text-gray-400 text-sm">Crea in 5 secondi descrizioni ad alto impatto per i portali immobiliari.</p>
+        </div>
+        <div class="bg-card p-6 rounded-2xl">
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-2xl mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Qualificatore WhatsApp</h3>
+            <p class="text-gray-400 text-sm">Un assistente virtuale risponde e filtra i contatti 24/7 prima che arrivino a te.</p>
+        </div>
+        <div class="bg-card p-6 rounded-2xl">
+            <i class="fa-regular fa-calendar-check text-indigo-400 text-2xl mb-4"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Prenotazione Visite Automatica</h3>
+            <p class="text-gray-400 text-sm">Fissa gli appuntamenti in agenda solo con clienti realmente interessati.</p>
         </div>
     </section>
 
-    <section class="features">
-        <div class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Generatore Annunci IA</h3>
-            <p>Crea in 5 secondi descrizioni ad alta conversione per Immobiliare.it, Idealista, post Social e script per Video Reel.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">💬</div>
-            <h3>Qualificatore WhatsApp</h3>
-            <p>Un assistente virtuale risponde H24 ai contatti chiedendo se hanno delibera del mutuo e tempistiche d'acquisto.</p>
-        </div>
-        <div class="card">
-            <div class="card-icon">📅</div>
-            <h3>Prenotazione Visite Automatica</h3>
-            <p>Invia il tuo link Calendly solo ai clienti "Caldi" e davvero pronti a comprare, azzerando le visite a vuoto.</p>
-        </div>
-    </section>
-
-    <section class="pricing" id="pricing">
-        <h2 class="pricing-title">Piani Semplici e Trasparenti</h2>
-        <p class="pricing-subtitle">7 giorni di prova gratuita inclusi. Disdici quando vuoi.</p>
-
-        <div class="pricing-grid">
-            <!-- Starter -->
-            <div class="price-card">
-                <h3>Starter</h3>
-                <p>Per agenti singoli</p>
-                <div class="price">49€ <span>/ mese</span></div>
-                <ul class="price-features">
-                    <li>Fino a 20 Annunci IA / mese</li>
-                    <li>Generatore Social & Script Video</li>
-                    <li>Qualificazione Lead Base</li>
-                    <li>Supporto via Email</li>
-                </ul>
-                <a href="https://buy.stripe.com/test_14A6oH1z3dksbiW2I25EY05" class="btn-card">Attiva Starter</a>
-            </div>
-
-            <!-- Pro -->
-            <div class="price-card popular">
-                <div class="popular-badge">Più Popolare</div>
-                <h3>Pro</h3>
-                <p>Per piccole e medie agenzie</p>
-                <div class="price">129€ <span>/ mese</span></div>
-                <ul class="price-features">
-                    <li>Annunci IA Illimitati</li>
-                    <li>Bot WhatsApp Automatizzato (100 lead/mo)</li>
-                    <li>Integrazione Calendly / Agenda</li>
-                    <li>Supporto Prioritario</li>
-                </ul>
-                <a href="https://buy.stripe.com/test_6oU5kDgtX1BKbiW4Qa5EY04" class="btn-card" style="background-color: var(--primary);">Attiva Pro</a>
-            </div>
-
-            <!-- Agency -->
-            <div class="price-card">
-                <h3>Agency</h3>
-                <p>Per agenzie multi-sede</p>
-                <div class="price">299€ <span>/ mese</span></div>
-                <ul class="price-features">
-                    <li>Tutto del piano Pro</li>
-                    <li>Fino a 5 account Agente inclusi</li>
-                    <li>WhatsApp Lead Illimitati</li>
-                    <li>Onboarding dedicato 1-on-1</li>
-                </ul>
-                <a href="https://buy.stripe.com/test_eVqfZh5Pja8g9aO4Qa5EY06" class="btn-card">Attiva Agency</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Agento AI SaaS. Tutti i diritti riservati.</p>
+    <!-- Footer -->
+    <footer class="text-center text-xs text-gray-500 py-6 border-t border-gray-800 max-w-5xl mx-auto w-full">
+        &copy; 2026 SYNKASA. Tutti i diritti riservati.
     </footer>
-
 </body>
 </html>
