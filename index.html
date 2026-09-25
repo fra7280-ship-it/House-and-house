@@ -9,55 +9,131 @@
     <style>
         body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         .gradient-text { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-bg { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); }
         .bg-card { background-color: #161b22; border: 1px solid #30363d; }
+        .bg-card-featured { background-color: #1f242d; border: 2px solid #8b5cf6; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between p-4 md:p-8">
-    <!-- Header -->
-    <header class="flex justify-between items-center py-4 px-2 max-w-5xl mx-auto w-full">
-        <div class="flex items-center space-x-2">
-            <span class="text-2xl font-bold tracking-wider text-white">SYN<span class="gradient-text">KASA</span></span>
+<body class="min-h-screen flex flex-col justify-between">
+    <!-- Header / Navbar -->
+    <header class="border-b border-gray-800 bg-[#0d1117]/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-black tracking-wider text-white">SYN<span class="gradient-text">KASA</span></span>
+            </div>
+            <a href="#pricing" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition shadow-lg shadow-purple-600/20">
+                Inizia Prova Gratuita
+            </a>
         </div>
-        <a href="#pricing" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition">Prova Ora</a>
     </header>
 
     <!-- Hero Section -->
-    <main class="max-w-3xl mx-auto text-center my-12">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-            Genera annunci perfetti e qualifica i clienti su <span class="gradient-text">WhatsApp</span> in automatico
+    <section class="max-w-4xl mx-auto text-center px-6 pt-16 pb-12">
+        <div class="inline-flex items-center space-x-2 bg-purple-950/50 border border-purple-800/50 rounded-full px-4 py-1.5 mb-6">
+            <span class="flex h-2 w-2 rounded-full bg-purple-400 animate-pulse"></span>
+            <span class="text-xs font-semibold text-purple-300">Piattaforma IA per Agenti Immobiliari</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+            Qualifica i tuoi lead su <span class="gradient-text">WhatsApp</span> e genera annunci in pochi secondi
         </h1>
-        <p class="text-lg text-gray-400 mb-8">
-            Risparmia fino a 15 ore a settimana. Fai qualificare dal nostro bot le richieste di mutuo e tempistiche prima di fissare una visita.
+        <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Automaticamente. Senza perdere tempo al telefono. Fai filtrare budget, tempistiche e mutuo dal tuo assistente virtuale prima di fissare ogni visita.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#pricing" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-xl text-lg transition shadow-lg shadow-purple-600/30">
-                Inizia la Prova Gratuita di 7 Giorni
+            <a href="#pricing" class="gradient-bg text-white font-bold px-8 py-4 rounded-xl text-lg transition transform hover:-translate-y-0.5 shadow-xl shadow-purple-600/30">
+                Inizia Ora - 7 Giorni Gratis
             </a>
         </div>
-    </main>
+    </section>
 
-    <!-- Features -->
-    <section class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 my-12">
-        <div class="bg-card p-6 rounded-2xl">
-            <i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-2xl mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Generatore Annunci IA</h3>
-            <p class="text-gray-400 text-sm">Crea in 5 secondi descrizioni ad alto impatto per i portali immobiliari.</p>
+    <!-- Features Grid -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">Tutto quello che ti serve per scalare la tua agenzia</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-card p-8 rounded-2xl hover:border-purple-500/50 transition">
+                <div class="w-12 h-12 bg-purple-900/40 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Copywriting Immobiliare IA</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Trasforma le caratteristiche di un immobile in descrizioni persuasive ed emozionali per Immobiliare.it, Idealista e Social Network.</p>
+            </div>
+            <div class="bg-card p-8 rounded-2xl hover:border-emerald-500/50 transition">
+                <div class="w-12 h-12 bg-emerald-900/40 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Bot Qualificatore WhatsApp</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Risponde istantaneamente a chi chiede informazioni. Analizza le reali intenzioni d'acquisto e raccoglie i dati pre-visita 24 ore su 24.</p>
+            </div>
+            <div class="bg-card p-8 rounded-2xl hover:border-indigo-500/50 transition">
+                <div class="w-12 h-12 bg-indigo-900/40 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-regular fa-calendar-check text-indigo-400 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Agenda & Appuntamenti</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Elimina i buchi nell'agenda e i clienti "curiosi". Fissa le visite solo con gli acquirenti che superano i criteri di qualifica.</p>
+            </div>
         </div>
-        <div class="bg-card p-6 rounded-2xl">
-            <i class="fa-brands fa-whatsapp text-emerald-400 text-2xl mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Qualificatore WhatsApp</h3>
-            <p class="text-gray-400 text-sm">Un assistente virtuale risponde e filtra i contatti 24/7 prima che arrivino a te.</p>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="max-w-5xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Scegli il piano per la tua agenzia</h2>
+            <p class="text-gray-400">Tutti i piani includono 7 giorni di prova gratuita. Cancelli quando vuoi.</p>
         </div>
-        <div class="bg-card p-6 rounded-2xl">
-            <i class="fa-regular fa-calendar-check text-indigo-400 text-2xl mb-4"></i>
-            <h3 class="text-xl font-bold text-white mb-2">Prenotazione Visite Automatica</h3>
-            <p class="text-gray-400 text-sm">Fissa gli appuntamenti in agenda solo con clienti realmente interessati.</p>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Piano Pro -->
+            <div class="bg-card p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">SYNKASA Pro</h3>
+                    <p class="text-gray-400 text-sm mb-6">Perfetto per agenti immobiliari autonomi.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-white">€49</span>
+                        <span class="text-gray-400"> / mese</span>
+                    </div>
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Generatore Annunci IA Illimitato</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Qualificazione WhatsApp fino a 100 lead/mese</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Sincronizzazione Calendario</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Supporto Standard</li>
+                    </ul>
+                </div>
+                <a href="INCOLLA_QUI_IL_LINK_PRO_DI_STRIPE" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3.5 rounded-xl transition">
+                    Inizia Prova di 7 Giorni
+                </a>
+            </div>
+
+            <!-- Piano Agency -->
+            <div class="bg-card-featured p-8 rounded-2xl flex flex-col justify-between relative">
+                <div class="absolute -top-3 right-6 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Più Popolare
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">SYNKASA Agency</h3>
+                    <p class="text-gray-400 text-sm mb-6">Ideale per agenzie con più collaboratori.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-white">€99</span>
+                        <span class="text-gray-400"> / mese</span>
+                    </div>
+                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Tutto quello che c'è nel piano Pro</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Lead WhatsApp Illimitati</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Gestione Multi-Agente</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Integrazione CRM Dedicata</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Supporto Prioritario 24/7</li>
+                    </ul>
+                </div>
+                <a href="INCOLLA_QUI_IL_LINK_AGENCY_DI_STRIPE" class="block w-full text-center gradient-bg text-white font-semibold py-3.5 rounded-xl transition shadow-lg shadow-purple-600/30">
+                    Inizia Prova di 7 Giorni
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center text-xs text-gray-500 py-6 border-t border-gray-800 max-w-5xl mx-auto w-full">
-        &copy; 2026 SYNKASA. Tutti i diritti riservati.
+    <footer class="border-t border-gray-800 py-8 text-center text-xs text-gray-500">
+        <p>&copy; 2026 SYNKASA. Tutti i diritti riservati.</p>
     </footer>
 </body>
 </html>
+
