@@ -11,7 +11,7 @@
         .gradient-text { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .gradient-bg { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); }
         .bg-card { background-color: #161b22; border: 1px solid #30363d; }
-        .bg-card-featured { background-color: #1f242d; border: 2px solid #8b5cf6; }
+        .bg-card-featured { background-color: #1f242d; border: 2px solid #a855f7; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
@@ -74,57 +74,81 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="max-w-5xl mx-auto px-6 py-16">
+    <!-- Pricing Section (3 Piani: 49€ / 129€ / 299€) -->
+    <section id="pricing" class="max-w-6xl mx-auto px-6 py-16">
         <div class="text-center mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Scegli il piano per la tua agenzia</h2>
-            <p class="text-gray-400">Tutti i piani includono 7 giorni di prova gratuita. Cancelli quando vuoi.</p>
+            <p class="text-gray-400">Tutti i piani includono 7 giorni di prova gratuita. Disdici quando vuoi senza vincoli.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Piano Pro -->
+        <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+            <!-- Piano Solo (49€) -->
             <div class="bg-card p-8 rounded-2xl flex flex-col justify-between">
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-2">SYNKASA Pro</h3>
-                    <p class="text-gray-400 text-sm mb-6">Perfetto per agenti immobiliari autonomi.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">SYNKASA Starter</h3>
+                    <p class="text-gray-400 text-xs mb-6">Ideale per agenti immobiliari singoli.</p>
                     <div class="mb-6">
                         <span class="text-4xl font-extrabold text-white">€49</span>
-                        <span class="text-gray-400"> / mese</span>
+                        <span class="text-gray-400 text-sm"> / mese</span>
                     </div>
-                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Generatore Annunci IA Illimitato</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Qualificazione WhatsApp fino a 100 lead/mese</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Sincronizzazione Calendario</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Supporto Standard</li>
+                    <ul class="space-y-3.5 text-xs text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> 1 Account Agente</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Generatore Annunci IA Illimitato</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Qualificazione WhatsApp (fino a 100 lead/mese)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Sincronizzazione Google Calendar</li>
+                        <li class="flex items-center text-gray-500"><i class="fa-solid fa-xmark mr-2.5"></i> Integrazione CRM Dedicata</li>
                     </ul>
                 </div>
-                <a href="INCOLLA_QUI_IL_LINK_PRO_DI_STRIPE" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3.5 rounded-xl transition">
-                    Inizia Prova di 7 Giorni
+                <a href="INCOLLA_QUI_LINK_49" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition text-sm">
+                    Inizia Prova 7 Giorni
                 </a>
             </div>
 
-            <!-- Piano Agency -->
-            <div class="bg-card-featured p-8 rounded-2xl flex flex-col justify-between relative">
-                <div class="absolute -top-3 right-6 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                    Più Popolare
+            <!-- Piano Pro / Agency (129€ - In Evidenza) -->
+            <div class="bg-card-featured p-8 rounded-2xl flex flex-col justify-between relative transform lg:-translate-y-2">
+                <div class="absolute -top-3.5 right-6 bg-purple-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Consigliato
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-white mb-2">SYNKASA Agency</h3>
-                    <p class="text-gray-400 text-sm mb-6">Ideale per agenzie con più collaboratori.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">SYNKASA Pro</h3>
+                    <p class="text-gray-400 text-xs mb-6">Perfetto per agenzie immobiliari in crescita.</p>
                     <div class="mb-6">
-                        <span class="text-4xl font-extrabold text-white">€99</span>
-                        <span class="text-gray-400"> / mese</span>
+                        <span class="text-4xl font-extrabold text-white">€129</span>
+                        <span class="text-gray-400 text-sm"> / mese</span>
                     </div>
-                    <ul class="space-y-4 text-sm text-gray-300 mb-8">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Tutto quello che c'è nel piano Pro</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Lead WhatsApp Illimitati</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Gestione Multi-Agente</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Integrazione CRM Dedicata</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-3"></i> Supporto Prioritario 24/7</li>
+                    <ul class="space-y-3.5 text-xs text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Fino a 5 Account Agenti</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Generatore Annunci IA Illimitato</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Lead WhatsApp Illimitati</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Sincronizzazione Agenda Multi-Agente</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Integrazione CRM Principali</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Supporto Prioritario</li>
                     </ul>
                 </div>
-                <a href="INCOLLA_QUI_IL_LINK_AGENCY_DI_STRIPE" class="block w-full text-center gradient-bg text-white font-semibold py-3.5 rounded-xl transition shadow-lg shadow-purple-600/30">
-                    Inizia Prova di 7 Giorni
+                <a href="INCOLLA_QUI_LINK_129" class="block w-full text-center gradient-bg text-white font-bold py-3.5 rounded-xl transition shadow-lg shadow-purple-600/30 text-sm">
+                    Inizia Prova 7 Giorni
+                </a>
+            </div>
+
+            <!-- Piano Enterprise (299€) -->
+            <div class="bg-card p-8 rounded-2xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">SYNKASA Enterprise</h3>
+                    <p class="text-gray-400 text-xs mb-6">Per grandi gruppi e reti di agenzie.</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-white">€299</span>
+                        <span class="text-gray-400 text-sm"> / mese</span>
+                    </div>
+                    <ul class="space-y-3.5 text-xs text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Agenti & Sedi Illimitate</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Modelli IA Personalizzati su Misura</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Numero WhatsApp Aziendale Dedicato</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Integrazioni API & CRM Custom</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-purple-400 mr-2.5"></i> Account Manager Dedicato h24</li>
+                    </ul>
+                </div>
+                <a href="INCOLLA_QUI_LINK_299" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-xl transition text-sm">
+                    Inizia Prova 7 Giorni
                 </a>
             </div>
         </div>
